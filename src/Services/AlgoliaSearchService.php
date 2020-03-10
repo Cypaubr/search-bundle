@@ -288,6 +288,10 @@ final class AlgoliaSearchService implements SearchService
             return false;
         }
 
+        if (in_array($_ENV['APP_ENV'], $this->configuration['indexIfEnv'])) {
+            return true;
+        }
+
         return true;
     }
 

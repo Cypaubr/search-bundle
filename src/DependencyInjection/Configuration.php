@@ -32,6 +32,9 @@ final class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
+                ->arrayNode('indexIfEnv')
+                    ->prototype('scalar')->end()
+                    ->defaultValue(null)
                 ->scalarNode('prefix')
                     ->defaultValue(null)
                 ->end()
